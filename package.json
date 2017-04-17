@@ -9,7 +9,7 @@
     "serve": "lite-server -c=bs-config.json",
     "serve:e2e": "lite-server -c=bs-config.e2e.json",
     "prestart": "npm run build",
-    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+    "start": "concurrently \"npm run build:watch\" \"gulp watch\" \"npm run serve\"",
     "pree2e": "npm run build:e2e",
     "e2e": "concurrently \"npm run serve:e2e\" \"npm run protractor\" --kill-others --success first",
     "preprotractor": "webdriver-manager update",
@@ -32,18 +32,22 @@
     "@angular/platform-browser": "~4.0.0",
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
-
     "angular-in-memory-web-api": "~0.3.0",
-    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
     "rxjs": "5.0.1",
+    "systemjs": "0.19.40",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "concurrently": "^3.2.0",
     "lite-server": "^2.2.2",
     "typescript": "~2.1.0",
-
     "canonical-path": "0.0.2",
     "tslint": "^3.15.1",
     "lodash": "^4.16.4",
@@ -55,7 +59,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~4.0.14",
     "rimraf": "^2.5.4",
-
     "@types/node": "^6.0.46",
     "@types/jasmine": "2.5.36"
   },
